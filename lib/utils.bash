@@ -19,22 +19,13 @@ sort_versions() {
 }
 
 list_all_versions() {
-  local versions
+  local versions, major_version
   versions=
-  for value in 10 9 8 7 6; do
-    versions="$versions $(list_versions "$value")"
+  for major_version in 10 9 8 7 6; do
+    curl "${curl_opts[@]}" "${tomcat_archive_url}/tomcat-${major_version}/" |
+      grep -o -P "<a href=\"v${major_version}(\.\d+)+/\">" |
+      grep -o -P "${major_version}(\.\d+)+"
   done
-  echo "$versions" | xargs | tr " " "\n"
-}
-
-list_versions() {
-  local major_version
-  major_version=$1
-  curl "${curl_opts[@]}" "${tomcat_archive_url}/tomcat-${major_version}/" |
-    grep -o -P "<a href=\"v${major_version}(\.\d+)+/\">" |
-    grep -o -P "${major_version}(\.\d+)+" |
-    tr "\n" " " |
-    xargs
 }
 
 download_release() {
