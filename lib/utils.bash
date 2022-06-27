@@ -21,8 +21,7 @@ sort_versions() {
 list_all_versions() {
   local versions
   versions=
-  for value in 10 9 8 7 6
-  do
+  for value in 10 9 8 7 6; do
     versions="$versions $(list_versions "$value")"
   done
   echo "$versions" | xargs | tr " " "\n"
@@ -42,7 +41,7 @@ download_release() {
   local version major_version filename url
   version="$1"
   filename="$2"
-  major_version=$(echo $version | cut -d . -f 1)
+  major_version=$(echo "$version" | cut -d . -f 1)
 
   url="${tomcat_archive_url}/tomcat-${major_version}/v${version}/bin/apache-tomcat-${version}.tar.gz"
 
