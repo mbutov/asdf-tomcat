@@ -22,8 +22,8 @@ list_all_versions() {
   local major_version
   for major_version in 10 9 8 7 6; do
     curl "${curl_opts[@]}" "${tomcat_archive_url}/tomcat-${major_version}/" |
-      grep -o -P "<a href=\"v${major_version}(\.\d+)+/\">" |
-      grep -o -P "${major_version}(\.\d+)+"
+      grep -o "<a href=\"v${major_version}\.[^\"]\+\">" |
+      grep -o "${major_version}\.[^/]\+"
   done
 }
 
