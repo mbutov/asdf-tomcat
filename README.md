@@ -46,6 +46,14 @@ catalina.sh version
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
 
+# Setting CATALINA_HOME environment variable
+
+For setting CATALINA_HOME environment variable, add the following line into `~/.bashrc` or `~/.zshrc` (depending on your shell) file:
+
+```shell
+. ~/.asdf/plugins/tomcat/set-catalina-home.sh
+```
+
 # Contributing
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
