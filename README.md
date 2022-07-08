@@ -1,5 +1,3 @@
-<div align="center">
-
 # asdf-tomcat [![Build](https://github.com/mbutov/asdf-tomcat/actions/workflows/build.yml/badge.svg)](https://github.com/mbutov/asdf-tomcat/actions/workflows/build.yml) [![Lint](https://github.com/mbutov/asdf-tomcat/actions/workflows/lint.yml/badge.svg)](https://github.com/mbutov/asdf-tomcat/actions/workflows/lint.yml)
 
 
